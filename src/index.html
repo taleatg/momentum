@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>momentum</title>
+</head>
+<body>
+  <header class="header">
+    <div class="player">
+      <div class="player-controls">
+        <div class="buttons-control">
+          <button class="play-prev player-icon"></button>
+          <button class="play player-icon"></button>
+          <button class="play-next player-icon"></button>
+          <div class="name-audio"></div>
+        </div>
+        <div class="progress-control">
+          <div class="current-time">00:00</div>
+          <input type="range" name="progress" value="0" min="0" max="100" step="1" class="progress-bar progress">
+          <div class="general-time">00:00</div>
+          <button class="volume player-icon"></button>
+          <input type="range" name="volume" min="0" max="1" step="0.1" class="volume-bar progress">
+        </div>
+      </div>
+      <ul class="play-list"></ul>
+    </div>
+    <div class="weather">
+      <input type="text" class="city" value="Minsk"/>
+      <i class="weather-icon owf"></i>
+      <div class="weather-error"></div>
+      <div class="description-container">
+        <span class="temperature"></span>
+        <span class="weather-description"></span>
+        <span class="humidity"></span>
+      </div>
+      <div class="wind"></div>
+      <div class="humidity"></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon"></button>
+      <button class="slide-next slider-icon"></button>
+    </div>
+    <time class="time"></time>
+    <date class="date"></date>
+    <div class="greeting-container">
+      <span class="greeting"></span>
+      <input type="text" class="name" placeholder="[Enter name]"/>
+    </div>
+    <div class="overlay"></div>
+    <div class="settings">
+      <div class="list-settings-container">
+      <div class="list-settings">
+        <div class="settings-text">
+          <div class="settings-text__content language">Language: </div>
+          <div class="setting-container">
+             <label class="input-container">
+               <input id="en" type="radio" name="lan" class="input-settings lan-en" checked>English
+               <label for="en" class="bullet"></label>
+             </label>
+             <label class="input-container">
+               <input id="ru" type="radio" name="lan" class="input-settings lan-ru">Русский
+               <label for="ru" class="bullet"></label>
+             </label>
+          </div>
+        </div>
+
+        <div class="settings-text collection-img-container">
+          <div class="settings-text__content collection-img">Collection of images:</div>
+          <div  class="setting-container">
+
+            <label class="input-container">
+              <input id="github" type="radio" name="img" class="input-settings github-collection">GitHub
+              <label for="github" class="bullet"></label>
+            </label>
+            <label class="input-container">
+              <input id="unsplash" type="radio" name="img" class="input-settings unsplash-collection">Unsplash API
+              <label for="unsplash" class="bullet"></label>
+            </label>
+            <div class="enter-teg enter-teg-unsplash"> <p class="teg">Enter teg:</p>
+              <input type="text" class="text-teg text-teg-unsplash">
+            </div>
+            <label class="input-container">
+              <input id="flickr" type="radio" name="img" class="input-settings flickr-collection">Flickr API
+              <label for="flickr" class="bullet"></label>
+            </label>
+            <div class="enter-teg enter-teg-flickr">  <p class="teg">Enter teg:</p>
+              <input type="text" class="text-teg text-teg-flickr">
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-text">
+          <div class="settings-text__content hide-elem">Show:</div>
+          <div  class="setting-container setting-container__last">
+            <label class="input-container "><label class="hide-time">Time</label>
+              <label class="button-switch">
+                <input type="checkbox" class="input-settings lan-ru switch input-settings input-time" checked/>
+              </label>
+            </label>
+            <label class="input-container"><label class="hide-date">Date</label>
+              <label class="button-switch">
+                <input type="checkbox" class="input-settings lan-ru switch input-settings input-date" checked/>
+              </label>
+            </label>
+            <label class="input-container"><label class="hide-greeting">Greeting</label>
+              <label class="button-switch">
+                <input type="checkbox" class="input-settings lan-ru switch input-settings input-greeting" checked/>
+              </label>
+            </label>
+             <label class="input-container"><label class="hide-quotes">Quotes</label>
+               <label class="button-switch">
+                 <input type="checkbox" class="input-settings lan-ru switch input-settings input-quotes" checked/>
+               </label>
+            </label>
+            <label class="input-container"><label class="hide-weather">Weather</label>
+              <label class="button-switch">
+                <input type="checkbox" class="input-settings lan-ru switch input-settings input-weather" checked/>
+              </label>
+            </label>
+            <label class="input-container"><label class="hide-audio">Audio player</label>
+
+              <label class="button-switch">
+                <input type="checkbox" class="input-settings lan-ru switch input-settings input-audio" checked/>
+              </label>
+            </label>
+            <label class="input-container"><label class="hide-todo">ToDo list</label>
+              <label class="button-switch">
+                <input type="checkbox" class="input-settings lan-ru switch input-settings input-todo" checked/>
+              </label>
+            </label>
+          </div>
+        </div>
+      </div>
+      </div>
+      <button class="settings-icon player-icon"></button>
+    </div>
+
+    <div class="todo">
+      <div class="todo-list">
+        <div class="todo-title">Todo list</div>
+        <div class="list">
+          <div class="todo-text">No todos yet</div>
+          <ul class="the-whole-list"> </ul>
+        </div>
+        <div class="add-item">
+          <input type="text" class="input-add">
+          <button class="add">Enter</button>
+        </div>
+      </div>
+      <button class="todo-icon">Todo</button>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="quote-container">
+      <button class="change-quote"></button>
+      <div>
+        <div class="quote"></div>
+        <div class="author"></div>
+      </div>
+    </div>
+    <div class="footer-end">
+      <div class="year">© 2021</div>
+      <div>
+        <a class="site-link" href="https://github.com/taleatg" target="_blank">
+          <div class="github">
+            <div class="github-icon"><img src="./assets/svg/github.svg" alt="github"></div>
+            <div class="my-name">Tatsiana Dashuk</div>
+          </div>
+        </a>
+      </div>
+      <div class="rs-school"><a class="site-link" href="https://rs.school/js/" target="_blank"><img src="./assets/svg/rs_school_js.svg" alt="rs-school"></a></div>
+    </div>
+  </footer>
+</body>
+</html>
